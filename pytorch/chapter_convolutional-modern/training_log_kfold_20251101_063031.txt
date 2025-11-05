@@ -1,0 +1,53 @@
+
+================================================================================
+实验开始时间: 2025-11-01 06:30:31
+日志文件: training_log_kfold_20251101_063031.txt
+================================================================================
+
+超参数配置:
+  k折数: 5
+  训练轮数: 20
+  学习率: 0.001
+  权重衰减: 0.0001
+  批量大小: 64
+  设备: cuda:0
+
+模型配置:
+  模型: ResNet-18
+  预训练: ImageNet
+  任务: 树叶分类
+  类别数: 176
+
+数据增强配置:
+================================================================================
+
+训练集数据增强变换:
+  1. Resize(size=(256, 256))
+  2. RandomResizedCrop(size=(224, 224), scale=(0.8, 1.0), ratio=(0.75, 1.3333333333333333))
+  3. RandomHorizontalFlip
+  4. RandomVerticalFlip
+  5. RandomRotation(degrees=[-15.0, 15.0])
+  6. ColorJitter(brightness=(0.8, 1.2), contrast=(0.8, 1.2), saturation=(0.8, 1.2), hue=(-0.1, 0.1))
+  7. RandomGrayscale(p=0.1)
+  8. ToTensor
+  9. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+测试集变换:
+  1. Resize(size=(224, 224))
+  2. ToTensor
+  3. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+================================================================================
+第 1/5 折
+================================================================================
+Epoch 1/20: train_loss=3.0214, train_acc=0.2434, valid_acc=0.3779, 耗时=230.90秒
+Epoch 2/20: train_loss=1.7576, train_acc=0.4887, valid_acc=0.5022, 耗时=112.01秒
+Epoch 3/20: train_loss=1.3435, train_acc=0.5903, valid_acc=0.5619, 耗时=73.78秒
+Epoch 4/20: train_loss=1.1100, train_acc=0.6562, valid_acc=0.6381, 耗时=72.18秒
+Epoch 5/20: train_loss=0.9474, train_acc=0.6988, valid_acc=0.6918, 耗时=70.79秒
+Epoch 6/20: train_loss=0.8520, train_acc=0.7352, valid_acc=0.6986, 耗时=71.06秒
+Epoch 7/20: train_loss=0.7682, train_acc=0.7567, valid_acc=0.7300, 耗时=71.41秒
+Epoch 8/20: train_loss=0.6957, train_acc=0.7735, valid_acc=0.7583, 耗时=70.05秒
+Epoch 9/20: train_loss=0.6430, train_acc=0.7904, valid_acc=0.7779, 耗时=70.93秒
+Epoch 10/20: train_loss=0.6102, train_acc=0.7987, valid_acc=0.7842, 耗时=81.62秒
+Epoch 11/20: train_loss=0.5741, train_acc=0.8100, valid_acc=0.7856, 耗时=77.68秒

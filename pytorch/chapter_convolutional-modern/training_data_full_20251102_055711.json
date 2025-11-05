@@ -1,0 +1,229 @@
+{
+  "start_time": "2025-11-02 05:57:11",
+  "log_file": "training_log_full_20251102_055711.txt",
+  "hyperparameters": {
+    "训练轮数": 20,
+    "学习率": 0.001,
+    "权重衰减": 0.0001,
+    "批量大小": 256,
+    "dropout_rate": 0.5,
+    "设备": "cuda:0",
+    "训练集大小": 18353
+  },
+  "model_config": {
+    "model_name": "ResNet-18",
+    "预训练": "ImageNet",
+    "任务": "树叶分类",
+    "类别数": 176,
+    "训练模式": "完整数据集训练"
+  },
+  "augmentation_config": {
+    "train_transforms": [
+      {
+        "index": 1,
+        "transform": "Resize",
+        "params": "size=(256, 256)"
+      },
+      {
+        "index": 2,
+        "transform": "RandomResizedCrop",
+        "params": "size=(224, 224), scale=(0.8, 1.0), ratio=(0.75, 1.3333333333333333)"
+      },
+      {
+        "index": 3,
+        "transform": "RandomHorizontalFlip",
+        "params": ""
+      },
+      {
+        "index": 4,
+        "transform": "RandomVerticalFlip",
+        "params": ""
+      },
+      {
+        "index": 5,
+        "transform": "RandomRotation",
+        "params": "degrees=[-15.0, 15.0]"
+      },
+      {
+        "index": 6,
+        "transform": "ColorJitter",
+        "params": "brightness=(0.8, 1.2), contrast=(0.8, 1.2), saturation=(0.8, 1.2), hue=(-0.1, 0.1)"
+      },
+      {
+        "index": 7,
+        "transform": "RandomGrayscale",
+        "params": "p=0.1"
+      },
+      {
+        "index": 8,
+        "transform": "ToTensor",
+        "params": ""
+      },
+      {
+        "index": 9,
+        "transform": "Normalize",
+        "params": "mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]"
+      }
+    ],
+    "test_transforms": [
+      {
+        "index": 1,
+        "transform": "Resize",
+        "params": "size=(224, 224)"
+      },
+      {
+        "index": 2,
+        "transform": "ToTensor",
+        "params": ""
+      },
+      {
+        "index": 3,
+        "transform": "Normalize",
+        "params": "mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]"
+      }
+    ]
+  },
+  "training_history": [
+    {
+      "epoch": 1,
+      "train_loss": 3.3012426279613916,
+      "train_acc": 0.23080695254181877,
+      "valid_acc": null,
+      "epoch_time": 100.38346552848816
+    },
+    {
+      "epoch": 2,
+      "train_loss": 1.7602298112680221,
+      "train_acc": 0.49850160736664306,
+      "valid_acc": null,
+      "epoch_time": 92.88086438179016
+    },
+    {
+      "epoch": 3,
+      "train_loss": 1.2691584951135955,
+      "train_acc": 0.6249659456219692,
+      "valid_acc": null,
+      "epoch_time": 91.86607837677002
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.0298412194312032,
+      "train_acc": 0.6900779164169346,
+      "valid_acc": null,
+      "epoch_time": 92.17661666870117
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.8721491461591825,
+      "train_acc": 0.7362828965291778,
+      "valid_acc": null,
+      "epoch_time": 91.89578318595886
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.7456755710643221,
+      "train_acc": 0.7661962621914673,
+      "valid_acc": null,
+      "epoch_time": 92.51569437980652
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.6563238213382248,
+      "train_acc": 0.7919141284803575,
+      "valid_acc": null,
+      "epoch_time": 93.34878134727478
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.6013467732953134,
+      "train_acc": 0.8080422819157631,
+      "valid_acc": null,
+      "epoch_time": 91.57078742980957
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.5529742748160678,
+      "train_acc": 0.823734539312374,
+      "valid_acc": null,
+      "epoch_time": 91.83321380615234
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.5089018421329504,
+      "train_acc": 0.8399716667574784,
+      "valid_acc": null,
+      "epoch_time": 91.66672253608704
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.46964171745598765,
+      "train_acc": 0.8478722824606332,
+      "valid_acc": null,
+      "epoch_time": 93.3851535320282
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.447831893305957,
+      "train_acc": 0.8562087942025827,
+      "valid_acc": null,
+      "epoch_time": 92.03232860565186
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.43028970905911246,
+      "train_acc": 0.8617664686972157,
+      "valid_acc": null,
+      "epoch_time": 92.60203695297241
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.3983881703379472,
+      "train_acc": 0.8701574674440146,
+      "valid_acc": null,
+      "epoch_time": 93.90414929389954
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.37285510876494027,
+      "train_acc": 0.8767503950307851,
+      "valid_acc": null,
+      "epoch_time": 93.18229794502258
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.35584932559518495,
+      "train_acc": 0.8818721734866234,
+      "valid_acc": null,
+      "epoch_time": 92.61870574951172
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.3391808635148081,
+      "train_acc": 0.8887920231024901,
+      "valid_acc": null,
+      "epoch_time": 93.05412340164185
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.3321301051802332,
+      "train_acc": 0.8912439383207105,
+      "valid_acc": null,
+      "epoch_time": 92.44842433929443
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.3226933799854957,
+      "train_acc": 0.8928785484661909,
+      "valid_acc": null,
+      "epoch_time": 92.14824223518372
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.3081830780465408,
+      "train_acc": 0.8999073720917561,
+      "valid_acc": null,
+      "epoch_time": 93.22380995750427
+    }
+  ],
+  "end_time": "2025-11-02 06:28:24"
+}

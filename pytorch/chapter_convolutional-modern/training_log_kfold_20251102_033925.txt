@@ -1,0 +1,194 @@
+
+================================================================================
+实验开始时间: 2025-11-02 03:39:25
+日志文件: training_log_kfold_20251102_033925.txt
+================================================================================
+
+超参数配置:
+  k折数: 5
+  训练轮数: 20
+  学习率: 0.001
+  权重衰减: 0.0001
+  批量大小: 256
+  dropout_rate: 0.5
+  设备: cuda:0
+
+模型配置:
+  模型: ResNet-18
+  预训练: ImageNet
+  任务: 树叶分类
+  类别数: 176
+
+数据增强配置:
+================================================================================
+
+训练集数据增强变换:
+  1. Resize(size=(256, 256))
+  2. RandomResizedCrop(size=(224, 224), scale=(0.8, 1.0), ratio=(0.75, 1.3333333333333333))
+  3. RandomHorizontalFlip
+  4. RandomVerticalFlip
+  5. RandomRotation(degrees=[-15.0, 15.0])
+  6. ColorJitter(brightness=(0.8, 1.2), contrast=(0.8, 1.2), saturation=(0.8, 1.2), hue=(-0.1, 0.1))
+  7. RandomGrayscale(p=0.1)
+  8. ToTensor
+  9. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+测试集变换:
+  1. Resize(size=(224, 224))
+  2. ToTensor
+  3. Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+================================================================================
+第 1/5 折
+================================================================================
+Epoch 1/20: train_loss=3.5864, train_acc=0.1878, valid_acc=0.4117, 耗时=82.00秒
+Epoch 2/20: train_loss=2.0184, train_acc=0.4400, valid_acc=0.5223, 耗时=78.53秒
+Epoch 3/20: train_loss=1.4662, train_acc=0.5710, valid_acc=0.5635, 耗时=72.67秒
+Epoch 4/20: train_loss=1.1858, train_acc=0.6418, valid_acc=0.6123, 耗时=73.13秒
+Epoch 5/20: train_loss=1.0209, train_acc=0.6893, valid_acc=0.6193, 耗时=78.42秒
+Epoch 6/20: train_loss=0.8829, train_acc=0.7236, valid_acc=0.6714, 耗时=75.51秒
+Epoch 7/20: train_loss=0.7694, train_acc=0.7590, valid_acc=0.6864, 耗时=74.61秒
+Epoch 8/20: train_loss=0.6981, train_acc=0.7827, valid_acc=0.7591, 耗时=74.98秒
+Epoch 9/20: train_loss=0.6211, train_acc=0.8052, valid_acc=0.7540, 耗时=74.73秒
+Epoch 10/20: train_loss=0.5956, train_acc=0.8130, valid_acc=0.7894, 耗时=74.62秒
+Epoch 11/20: train_loss=0.5401, train_acc=0.8274, valid_acc=0.7654, 耗时=74.82秒
+Epoch 12/20: train_loss=0.5081, train_acc=0.8370, valid_acc=0.7744, 耗时=74.38秒
+Epoch 13/20: train_loss=0.4631, train_acc=0.8538, valid_acc=0.8079, 耗时=76.46秒
+Epoch 14/20: train_loss=0.4478, train_acc=0.8531, valid_acc=0.8191, 耗时=75.04秒
+Epoch 15/20: train_loss=0.4425, train_acc=0.8579, valid_acc=0.8038, 耗时=75.24秒
+Epoch 16/20: train_loss=0.4042, train_acc=0.8711, valid_acc=0.8507, 耗时=77.14秒
+Epoch 17/20: train_loss=0.4042, train_acc=0.8696, valid_acc=0.8384, 耗时=76.96秒
+Epoch 18/20: train_loss=0.3635, train_acc=0.8824, valid_acc=0.8504, 耗时=76.36秒
+Epoch 19/20: train_loss=0.3549, train_acc=0.8804, valid_acc=0.8474, 耗时=75.27秒
+Epoch 20/20: train_loss=0.3560, train_acc=0.8860, valid_acc=0.8425, 耗时=79.01秒
+
+第 1 折总结:
+  最终训练准确率: 0.8860
+  最终验证准确率: 0.8425
+  总耗时: 1638.43 秒 (27.31 分钟)
+
+================================================================================
+第 2/5 折
+================================================================================
+Epoch 1/20: train_loss=3.5154, train_acc=0.2012, valid_acc=0.2905, 耗时=76.45秒
+Epoch 2/20: train_loss=1.9961, train_acc=0.4416, valid_acc=0.4297, 耗时=76.73秒
+Epoch 3/20: train_loss=1.4661, train_acc=0.5680, valid_acc=0.5561, 耗时=76.35秒
+Epoch 4/20: train_loss=1.2177, train_acc=0.6315, valid_acc=0.6270, 耗时=75.89秒
+Epoch 5/20: train_loss=0.9959, train_acc=0.6957, valid_acc=0.6736, 耗时=75.36秒
+Epoch 6/20: train_loss=0.8687, train_acc=0.7311, valid_acc=0.7044, 耗时=76.11秒
+Epoch 7/20: train_loss=0.7687, train_acc=0.7636, valid_acc=0.6943, 耗时=78.47秒
+Epoch 8/20: train_loss=0.7079, train_acc=0.7811, valid_acc=0.7188, 耗时=76.06秒
+Epoch 9/20: train_loss=0.6248, train_acc=0.7997, valid_acc=0.7586, 耗时=77.07秒
+Epoch 10/20: train_loss=0.5825, train_acc=0.8163, valid_acc=0.6921, 耗时=79.34秒
+Epoch 11/20: train_loss=0.5707, train_acc=0.8184, valid_acc=0.7262, 耗时=76.10秒
+Epoch 12/20: train_loss=0.5013, train_acc=0.8446, valid_acc=0.7550, 耗时=74.50秒
+Epoch 13/20: train_loss=0.4907, train_acc=0.8401, valid_acc=0.8128, 耗时=76.56秒
+Epoch 14/20: train_loss=0.4539, train_acc=0.8538, valid_acc=0.8147, 耗时=75.96秒
+Epoch 15/20: train_loss=0.4257, train_acc=0.8626, valid_acc=0.7918, 耗时=76.62秒
+Epoch 16/20: train_loss=0.3997, train_acc=0.8699, valid_acc=0.7422, 耗时=77.22秒
+Epoch 17/20: train_loss=0.4039, train_acc=0.8658, valid_acc=0.8049, 耗时=76.54秒
+Epoch 18/20: train_loss=0.3674, train_acc=0.8786, valid_acc=0.7872, 耗时=76.21秒
+Epoch 19/20: train_loss=0.3702, train_acc=0.8788, valid_acc=0.7916, 耗时=76.90秒
+Epoch 20/20: train_loss=0.3582, train_acc=0.8823, valid_acc=0.8278, 耗时=77.70秒
+
+第 2 折总结:
+  最终训练准确率: 0.8823
+  最终验证准确率: 0.8278
+  总耗时: 1657.44 秒 (27.62 分钟)
+
+================================================================================
+第 3/5 折
+================================================================================
+Epoch 1/20: train_loss=3.5659, train_acc=0.1969, valid_acc=0.3373, 耗时=73.99秒
+Epoch 2/20: train_loss=2.0072, train_acc=0.4387, valid_acc=0.5128, 耗时=77.34秒
+Epoch 3/20: train_loss=1.4865, train_acc=0.5631, valid_acc=0.5542, 耗时=78.80秒
+Epoch 4/20: train_loss=1.1910, train_acc=0.6450, valid_acc=0.6474, 耗时=77.25秒
+Epoch 5/20: train_loss=1.0228, train_acc=0.6867, valid_acc=0.6815, 耗时=77.44秒
+Epoch 6/20: train_loss=0.8809, train_acc=0.7279, valid_acc=0.6714, 耗时=76.49秒
+Epoch 7/20: train_loss=0.7760, train_acc=0.7595, valid_acc=0.7030, 耗时=76.38秒
+Epoch 8/20: train_loss=0.7055, train_acc=0.7793, valid_acc=0.7542, 耗时=76.64秒
+Epoch 9/20: train_loss=0.6328, train_acc=0.8002, valid_acc=0.7488, 耗时=76.96秒
+Epoch 10/20: train_loss=0.5730, train_acc=0.8154, valid_acc=0.7616, 耗时=76.35秒
+Epoch 11/20: train_loss=0.5601, train_acc=0.8223, valid_acc=0.7837, 耗时=76.54秒
+Epoch 12/20: train_loss=0.5094, train_acc=0.8363, valid_acc=0.7728, 耗时=77.47秒
+Epoch 13/20: train_loss=0.4553, train_acc=0.8534, valid_acc=0.7779, 耗时=75.77秒
+Epoch 14/20: train_loss=0.4414, train_acc=0.8565, valid_acc=0.7956, 耗时=76.86秒
+Epoch 15/20: train_loss=0.4306, train_acc=0.8619, valid_acc=0.8204, 耗时=75.69秒
+Epoch 16/20: train_loss=0.3926, train_acc=0.8726, valid_acc=0.7992, 耗时=76.49秒
+Epoch 17/20: train_loss=0.4043, train_acc=0.8660, valid_acc=0.7929, 耗时=77.10秒
+Epoch 18/20: train_loss=0.4098, train_acc=0.8676, valid_acc=0.7970, 耗时=74.66秒
+Epoch 19/20: train_loss=0.3753, train_acc=0.8796, valid_acc=0.8155, 耗时=77.36秒
+Epoch 20/20: train_loss=0.3405, train_acc=0.8924, valid_acc=0.8439, 耗时=76.96秒
+
+第 3 折总结:
+  最终训练准确率: 0.8924
+  最终验证准确率: 0.8439
+  总耗时: 1639.58 秒 (27.33 分钟)
+
+================================================================================
+第 4/5 折
+================================================================================
+Epoch 1/20: train_loss=3.4734, train_acc=0.2105, valid_acc=0.3905, 耗时=78.14秒
+Epoch 2/20: train_loss=1.9547, train_acc=0.4543, valid_acc=0.4583, 耗时=76.45秒
+Epoch 3/20: train_loss=1.4636, train_acc=0.5695, valid_acc=0.5717, 耗时=76.10秒
+Epoch 4/20: train_loss=1.1948, train_acc=0.6437, valid_acc=0.6357, 耗时=76.05秒
+Epoch 5/20: train_loss=0.9812, train_acc=0.7011, valid_acc=0.6986, 耗时=75.79秒
+Epoch 6/20: train_loss=0.8782, train_acc=0.7327, valid_acc=0.7589, 耗时=75.85秒
+Epoch 7/20: train_loss=0.7792, train_acc=0.7579, valid_acc=0.7665, 耗时=76.70秒
+Epoch 8/20: train_loss=0.7080, train_acc=0.7772, valid_acc=0.7409, 耗时=76.59秒
+Epoch 9/20: train_loss=0.6279, train_acc=0.8021, valid_acc=0.7398, 耗时=77.02秒
+Epoch 10/20: train_loss=0.5757, train_acc=0.8188, valid_acc=0.4638, 耗时=80.34秒
+Epoch 11/20: train_loss=0.5333, train_acc=0.8291, valid_acc=0.7831, 耗时=78.65秒
+Epoch 12/20: train_loss=0.5124, train_acc=0.8366, valid_acc=0.7065, 耗时=82.20秒
+Epoch 13/20: train_loss=0.4785, train_acc=0.8453, valid_acc=0.7970, 耗时=82.14秒
+Epoch 14/20: train_loss=0.4531, train_acc=0.8534, valid_acc=0.7482, 耗时=78.22秒
+Epoch 15/20: train_loss=0.4119, train_acc=0.8690, valid_acc=0.8153, 耗时=77.01秒
+Epoch 16/20: train_loss=0.3867, train_acc=0.8733, valid_acc=0.8319, 耗时=76.60秒
+Epoch 17/20: train_loss=0.3781, train_acc=0.8762, valid_acc=0.8166, 耗时=79.69秒
+Epoch 18/20: train_loss=0.3701, train_acc=0.8787, valid_acc=0.7839, 耗时=77.57秒
+Epoch 19/20: train_loss=0.3442, train_acc=0.8879, valid_acc=0.7834, 耗时=79.44秒
+Epoch 20/20: train_loss=0.3516, train_acc=0.8874, valid_acc=0.8264, 耗时=79.86秒
+
+第 4 折总结:
+  最终训练准确率: 0.8874
+  最终验证准确率: 0.8264
+  总耗时: 1672.58 秒 (27.88 分钟)
+
+================================================================================
+第 5/5 折
+================================================================================
+Epoch 1/20: train_loss=3.5501, train_acc=0.1981, valid_acc=0.3313, 耗时=80.89秒
+Epoch 2/20: train_loss=1.9864, train_acc=0.4454, valid_acc=0.5018, 耗时=78.46秒
+Epoch 3/20: train_loss=1.4680, train_acc=0.5748, valid_acc=0.4609, 耗时=79.04秒
+Epoch 4/20: train_loss=1.1914, train_acc=0.6452, valid_acc=0.5753, 耗时=78.94秒
+Epoch 5/20: train_loss=1.0163, train_acc=0.6933, valid_acc=0.6507, 耗时=78.41秒
+Epoch 6/20: train_loss=0.8897, train_acc=0.7266, valid_acc=0.7098, 耗时=78.95秒
+Epoch 7/20: train_loss=0.7768, train_acc=0.7554, valid_acc=0.7547, 耗时=79.82秒
+Epoch 8/20: train_loss=0.7102, train_acc=0.7790, valid_acc=0.7615, 耗时=77.33秒
+Epoch 9/20: train_loss=0.6334, train_acc=0.8016, valid_acc=0.7117, 耗时=76.51秒
+Epoch 10/20: train_loss=0.5954, train_acc=0.8122, valid_acc=0.7522, 耗时=77.01秒
+Epoch 11/20: train_loss=0.5517, train_acc=0.8212, valid_acc=0.6806, 耗时=76.01秒
+Epoch 12/20: train_loss=0.5009, train_acc=0.8386, valid_acc=0.7689, 耗时=76.29秒
+Epoch 13/20: train_loss=0.4643, train_acc=0.8526, valid_acc=0.7721, 耗时=75.90秒
+Epoch 14/20: train_loss=0.4635, train_acc=0.8522, valid_acc=0.7512, 耗时=75.38秒
+Epoch 15/20: train_loss=0.4196, train_acc=0.8627, valid_acc=0.7746, 耗时=75.94秒
+Epoch 16/20: train_loss=0.4011, train_acc=0.8718, valid_acc=0.7917, 耗时=75.71秒
+Epoch 17/20: train_loss=0.3865, train_acc=0.8736, valid_acc=0.8375, 耗时=76.70秒
+Epoch 18/20: train_loss=0.3696, train_acc=0.8782, valid_acc=0.8443, 耗时=75.88秒
+Epoch 19/20: train_loss=0.3577, train_acc=0.8827, valid_acc=0.7985, 耗时=76.55秒
+Epoch 20/20: train_loss=0.3377, train_acc=0.8896, valid_acc=0.8116, 耗时=75.73秒
+
+第 5 折总结:
+  最终训练准确率: 0.8896
+  最终验证准确率: 0.8116
+  总耗时: 1657.33 秒 (27.62 分钟)
+
+================================================================================
+最终总结
+================================================================================
+  k折交叉验证平均训练准确率: 0.8876
+  k折交叉验证平均验证准确率: 0.8304
+  平均每折耗时: 1653.07秒
+  所有折总耗时: 8265.36秒
+  程序总耗时: 8265.36 秒 (137.76 分钟)
+  实验结束时间: 2025-11-02 05:57:10
